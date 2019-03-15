@@ -10,11 +10,21 @@
     <h1>GPUretarded</h1>
 
     <div id="wrapper">
-      <div id="sidemenu"></div>
-      <div id="InstructionBlock">
-        <div id="codeblock-split">
+      <div id="menu">
+        <div id="button-menu"><a href="dx.html">Graphics</a></div>
+        <div id="button-menu"><a href="ml.html">Machine Learning</a></div>
+      </div>
 
 
+
+      <div id="textblock-instruction">
+        <div id="textblock-code">
+          <div id="textblock-code-header">
+          <h2>main.cpp</h2>
+          <button id="button-copy" onclick="CopyToClipboard('main.cpp')">Click to clipboard</button>
+          </div>
+
+          <div id="main.cpp">
           <pre>
   #include &lt;windows.h&gt;
   #include &lt;d3d11.h&gt;
@@ -153,9 +163,10 @@
   }
           </pre>
         </div>
+        </div>
 
 
-        
+
         <h2>Setting up a DirectX 11 appliction</h2>
           <h3>Create a C++ project in Visual Studios</h3>
             <p>1. Create an empty Win32 application.</p>
@@ -172,6 +183,8 @@
 
       </div>
 
+
+
     </div>
   </main>
 
@@ -181,6 +194,6 @@
       </p>
   </footer>
 
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="buttons.js"></script>
 </body>
 </html>

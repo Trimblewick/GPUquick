@@ -1,0 +1,77 @@
+html {
+    background-color: #ccc;
+}
+
+main {
+    margin: 4pt auto;
+    width: 100em;
+    height: auto;
+    background-color: #123;
+    padding: 4pt;
+    border: 8pt solid #444;
+    border-radius: 6pt;
+    box-shadow: 6pt 6pt 6pt 6pt #777;
+    text-align: center;
+}
+
+footer {
+    padding-top: 2em;
+    text-align: center;
+}
+
+#wrapper {
+  height: auto;
+  width: auto;
+
+  display: flex;
+  //flex-wrap: wrap;
+
+  text-align: left;
+
+  margin: 4pt;
+
+  padding: 4pt;
+
+  border:4pt solid #999;
+  background-color: #333;
+}
+
+#codeblock-split {
+  height: auto;
+  width: 40em;
+
+  text-align: left;
+
+  float: right;
+  padding: 2pt;
+
+  border:4pt solid #999;
+  background-color: #ccc;
+}
+
+#InstructionBlock {
+  height: auto;
+  width: 80em;
+
+  text-align: left;
+
+  margin-left: 6pt;
+
+  float: left;
+  padding: 2em;
+
+  border:4pt solid #999;
+  background-color: #444;
+}
+
+
+#sidemenu {
+  height: 25em;
+  width: 10em;
+
+  float: left;
+  padding: 1em;
+
+  border:4pt solid #999;
+  background-color: #345;
+}

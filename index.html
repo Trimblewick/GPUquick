@@ -11,17 +11,18 @@
 
     <div id="wrapper">
       <div id="menu">
-        <div id="button-menu"><a href="dx.html">Graphics</a></div>
-        <div id="button-menu"><a href="ml.html">Machine Learning</a></div>
+        <div class="button-menu"><a href="dx.html">Graphics</a></div>
+        <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
       </div>
-
-
 
       <div id="textblock-instruction">
         <div id="textblock-code">
           <div id="textblock-code-header">
-          <h2>main.cpp</h2>
-          <button id="button-copy" onclick="CopyToClipboard('main.cpp')">Click to clipboard</button>
+          <h2>main.cpp
+          <button class="button-copy" onclick="CopyToClipboard('main.cpp')"></button>
+          <button class="collapsible" onclick="Collapse(this, 'main.cpp')"></button>
+
+        </h2>
           </div>
 
           <div id="main.cpp">

@@ -41,7 +41,7 @@ footer {
   width: 80em;
 
   text-align: left;
-  font-size: 1.2em;
+
 
   margin-left: 6pt;
   float: left;
@@ -52,12 +52,15 @@ footer {
   background-color: #444;
 }
 
+p {
+  font-size: 1.2em;
+}
+
 #textblock-code {
   height: auto;
   width: 40em;
 
   text-align: left;
-  font-size: 0.8em;
 
   color: black;
   float: right;
@@ -85,9 +88,9 @@ footer {
   background-color: #345;
 }
 
-#button-menu {
+.button-menu {
     width: auto;
-    border: 2pt solid green;
+    border: 2pt solid #999;
     margin: 1pt;
     margin-bottom: 4pt;
     background: #234;
@@ -116,12 +119,37 @@ a:visited {
 
 
 a:hover {
-    color: red;
+    color: black;
     background: #eff;
 }
 
-#button-copy{
+.button-copy{
     float: right;
     margin-right: 1em;
+    width: 2.5em;
+    height: 2.5em;
 
+    background-image:url(clipboard.png);
+    background-size: 2.2em;
+}
+
+.button-copy:hover{
+  background-color: #ccc;
+  background-image:url(clipboardhover.png);
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  width: 2.5em;
+  height: 2.5em;
+  background-image:url(minimize.png);
+  background-size: 2.2em;
+  float: right;
+}
+
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.collapsible:hover {
+  background-color: #ccc;
 }

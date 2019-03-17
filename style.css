@@ -125,12 +125,12 @@ a:hover {
 
 .button-copy{
     float: right;
-    margin-right: 1em;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2.1em;
+    height: 2.1em;
+    margin-right: 2pt;
 
     background-image:url(clipboard.png);
-    background-size: 2.2em;
+    background-size: 1.8em;
 }
 
 .button-copy:hover{
@@ -140,11 +140,14 @@ a:hover {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  width: 2.5em;
-  height: 2.5em;
-  background-image:url(minimize.png);
-  background-size: 2.2em;
   float: right;
+  width: 2.1em;
+  height: 2.1em;
+  margin-right: 1em;
+
+  background-image:url(minimize.png);
+  background-size: 1.75em;
+
 }
 
 

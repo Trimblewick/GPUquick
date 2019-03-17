@@ -10,6 +10,16 @@ function ClearSelection()
  }
 }
 
+function CopyDivToClipboard(id)
+{
+     var range = document.createRange();
+     range.selectNode(document.getElementById(id));
+     window.getSelection().removeAllRanges();
+     window.getSelection().addRange(range);
+     document.execCommand("copy");
+     ClearSelection();
+}
+
 function CopyToClipboard(containerid)
 {
   if (document.selection)
@@ -30,8 +40,8 @@ function CopyToClipboard(containerid)
       document.execCommand("copy");
 
   }
-  ClearSelection();
-}
+  //ClearSelection();
+};
 
 function Collapse(element, containerid)
 {
@@ -49,4 +59,4 @@ function Collapse(element, containerid)
   }
 
 
-}
+};

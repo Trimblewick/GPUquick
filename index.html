@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="buttons.css">
     <title>GPUretarded</title>
 </head>
 <body>
@@ -19,10 +20,9 @@
         <div id="textblock-code">
           <div id="textblock-code-header">
           <h2>main.cpp
-            <button class="collapsible" onclick="Collapse(this, 'main.cpp')"></button>
-            <button class="button-copy" onclick="CopyToClipboard('main.cpp')"></button>
 
-
+            <button class="button-copy" onclick="CopyDivToClipboard('main.cpp')"></button>
+            <button class="button-collape" onclick="Collapse(this, 'main.cpp')"></button>
         </h2>
           </div>
 
@@ -197,5 +197,6 @@
   </footer>
 
   <script type="text/javascript" src="buttons.js"></script>
+  <script type="text/javascript" src="helpers.js"></script>
 </body>
 </html>

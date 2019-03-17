@@ -13,10 +13,25 @@ function ClearSelection()
 function CopyDivToClipboard(id)
 {
      var range = document.createRange();
-     range.selectNode(document.getElementById(id));
-     window.getSelection().removeAllRanges();
-     window.getSelection().addRange(range);
-     document.execCommand("copy");
+     var container = document.getElementById(id);
+
+     if (container.style.display === "none")
+     {
+       container.style.display = "block";
+       range.selectNode(container);
+       window.getSelection().removeAllRanges();
+       window.getSelection().addRange(range);
+       document.execCommand("copy");
+       container.style.display = "none"
+     }
+     else
+     {
+       range.selectNode(container);
+       window.getSelection().removeAllRanges();
+       window.getSelection().addRange(range);
+       document.execCommand("copy");
+     }
+
      ClearSelection();
 }
 
@@ -31,7 +46,7 @@ function CopyToClipboard(containerid)
       document.execCommand("copy");
 
   }
-  else if (window.getSelection)
+  else if (window.getSelection())
   {
       var range = document.createRange();
       var container = document.getElementById(containerid);

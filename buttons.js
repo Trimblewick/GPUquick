@@ -35,28 +35,7 @@ function CopyDivToClipboard(id)
      ClearSelection();
 }
 
-function CopyToClipboard(containerid)
-{
-  if (document.selection)
-  {
-      var range = document.body.createTextRange();
-      var container = document.getElementById(containerid);
-      range.moveToElementText(container);
-      range.select().createTextRange();
-      document.execCommand("copy");
 
-  }
-  else if (window.getSelection())
-  {
-      var range = document.createRange();
-      var container = document.getElementById(containerid);
-      range.moveToElementText(container);
-      window.getSelection().addRange(range);
-      document.execCommand("copy");
-
-  }
-  //ClearSelection();
-};
 
 function Collapse(element, containerid)
 {
@@ -74,4 +53,4 @@ function Collapse(element, containerid)
   }
 
 
-};
+}

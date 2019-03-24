@@ -10,46 +10,34 @@
 </head>
 <body>
   <main>
+    <header>
+      <!-- <h1>GPUquick</h1> -->
 
-
-      <header>
-        <!-- <h1>GPUquick</h1> -->
-
-          <script>
-          AddMenuButtons("menu");
-          </script>
-          <!-- <div class="button-menu"><a href="dx.html">Graphics</a></div>
-          <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
-          -->
-
-
-      </header>
+      <script>
+      AddMenuButtons();
+      </script>
+      <!-- <div class="button-menu"><a href="dx.html">Graphics</a></div>
+      <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
+      -->
+    </header>
 
     <div id="wrapper">
+      <div id="instruction">
+        <div id="codewrapper">
+          <script>
+            AddCodeBlock("codewrapper", "test2.cpp");
+          </script>
 
+          <div id="codeblock">
+            <div id="codeheader">
+              <h2>main.cpp
+                <button class="button-copy" onclick="CopyDivToClipboard('main.cpp')"></button>
+                <button class="button-collape" onclick="Collapse(this, 'main.cpp')"></button>
+              </h2>
+            </div>
 
-      <div id="textblock-instruction">
-
-
-
-
-        <div id="test">
-        <script>
-          AddCodeBlock("test");
-        </script>
-
-
-        <div id="textblock-code">
-          <div id="textblock-code-header">
-          <h2>main.cpp
-
-            <button class="button-copy" onclick="CopyDivToClipboard('main.cpp')"></button>
-            <button class="button-collape" onclick="Collapse(this, 'main.cpp')"></button>
-        </h2>
-          </div>
-
-          <div id="main.cpp">
-          <pre>
+            <div id="main.cpp">
+              <pre>
   #include &lt;windows.h&gt;
   #include &lt;d3d11.h&gt;
 
@@ -185,24 +173,28 @@
   	}
   	return DefWindowProc(hwnd, uMsg, wParam, lParam);
   }
-          </pre>
-        </div>
+            </pre>
+          </div>
         </div>
       </div>
-      <h2>Setting up a DirectX 11 appliction</h2>
-        <h3>Create a C++ project in Visual Studios</h3>
-          <p>1. Create an empty Win32 application.</p>
-          <p>2. Change so that the application compiles for an x64 system.</p>
-          <p>3. Create a main source file.
-            <br/>(The .cpp file that will hold the entry point to your program.)
-            <br/> 3.1 If you created the project as a console application, you may get a link error LNK2019 saying someting... invoke_main(void) ...
-            <br/> To fix this: Right click the Project-> Properties-> Configuration properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS.
-          </p>
-        <h3>Give the compiler some code to work with</h3>
-          <p>Paste the code, found to the right, into the main file.</p>
-          <p>1. Set up a window</p>
-          <p>2. Initialize directx</p>
-</div>
+
+        <h2>Setting up a DirectX 11 appliction</h2>
+          <h3>Create a C++ project in Visual Studios</h3>
+            <p>1. Create an empty Win32 application.</p>
+            <p>2. Change so that the application compiles for an x64 system.</p>
+            <p>3. Create a main source file.
+              <br/>(The .cpp file that will hold the entry point to your program.)
+              <br/> 3.1 If you created the project as a console application, you may get a link error LNK2019 saying someting... invoke_main(void) ...
+              <br/> To fix this: Right click the Project-> Properties-> Configuration properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS.
+            </p>
+          <h3>Give the compiler some code to work with</h3>
+            <p>Paste the code, found to the right, into the main file.</p>
+            <p>1. Set up a window</p>
+            <p>2. Initialize directx</p>
+
+
+        </div> <!-- end texblock instruction -->
+
     </div>
   </main>
 

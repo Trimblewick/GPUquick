@@ -49,6 +49,14 @@ a:hover {
     background: #eff;
 }
 
+pre {
+  width: 98.25%;
+  overflow: auto;
+  /* border: 1px solid #aaa; */
+  padding-left: 1.5%;
+  margin: 0;
+}
+
 #wrapper {
   height: auto;
   width: auto;
@@ -59,7 +67,7 @@ a:hover {
 
 }
 
-#textblock-instruction {
+#instruction {
   height: auto;
   width: 100%;
 
@@ -75,21 +83,22 @@ a:hover {
   background-color: #444;
 }
 
-#test {
+#codewrapper {
   float: right;
   width: 40em;
   padding: 1em;
   height:auto;
 }
 
-#textblock-code {
+#codeblock {
   height: auto;
-  width: auto;
+  width: 40em;
 
   text-align: left;
 
   color: black;
-  float: top;
+  float: right;
+  padding-left: 1em;
   padding: 2pt;
 
   border:4pt solid #999;
@@ -97,7 +106,7 @@ a:hover {
   margin-bottom: 1em;
 }
 
-#textblock-code-header{
+#codeheader{
   height: 4em;
   width: auto;
   text-align: left;

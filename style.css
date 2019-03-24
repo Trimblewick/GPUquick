@@ -3,14 +3,10 @@ html {
 }
 
 main {
-    margin: 4pt auto;
-    width: 100em;
+    width: auto;
     height: auto;
-    background-color: #123;
-    padding: 4pt;
-    border: 8pt solid #444;
-    border-radius: 6pt;
-    box-shadow: 6pt 6pt 6pt 6pt #777;
+    background-color: #ccc;
+
     text-align: center;
 }
 
@@ -23,6 +19,36 @@ p {
   font-size: 1.2em;
 }
 
+header {
+  height: auto;
+  width: auto;
+  float:top;
+  text-align: center;
+  color: black;
+  margin-bottom: 4pt;
+
+}
+a {
+    display: block;
+    width: 100%;
+    line-height: 2em;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: grey;
+}
+
+a:visited {
+  color: grey;
+}
+
+
+a:hover {
+    color: black;
+    background: #eff;
+}
+
 #wrapper {
   height: auto;
   width: auto;
@@ -31,38 +57,39 @@ p {
 
   text-align: left;
 
-  margin: 4pt;
-
-  padding: 5pt;
-
-  border:4pt solid #999;
-  background-color: #333;
 }
 
 #textblock-instruction {
   height: auto;
-  width: 80em;
+  width: 100%;
 
   text-align: left;
 
 
   margin-left: 6pt;
   float: left;
-  padding: 2em;
+  padding: 1em;
   color: #ccc;
 
   border:4pt solid #999;
   background-color: #444;
 }
 
+#test {
+  float: right;
+  width: 40em;
+  padding: 1em;
+  height:auto;
+}
+
 #textblock-code {
   height: auto;
-  width: 40em;
+  width: auto;
 
   text-align: left;
 
   color: black;
-  float: right;
+  float: top;
   padding: 2pt;
 
   border:4pt solid #999;
@@ -75,15 +102,4 @@ p {
   width: auto;
   text-align: left;
   margin-left: 1em;
-}
-
-#menu {
-  height: 25em;
-  width: 12em;
-
-  float: left;
-  padding: 4pt;
-
-  border:4pt solid #999;
-  background-color: #345;
 }

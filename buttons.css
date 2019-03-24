@@ -1,37 +1,18 @@
 .button-menu {
-    width: auto;
+    width: 15em;
+    height: auto;
+
+    display: inline-block;
     border: 2pt solid #999;
-    margin: 1pt;
-    margin-bottom: 4pt;
+    margin: 2pt;
+    margin-bottom: 3pt;
     background: #234;
     border-radius: 3pt;
 
-    font-size: 1.1em;
     font-weight: bold;
 }
 
-a {
-    display: block;
-    width: 100%;
-    line-height: 2em;
 
-    text-align: center;
-    text-decoration: none;
-
-
-    border-radius: 3pt;
-    color: grey;
-}
-
-a:visited {
-  color: grey;
-}
-
-
-a:hover {
-    color: black;
-    background: #eff;
-}
 
 .button-copy{
     float: right;

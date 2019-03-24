@@ -10,17 +10,32 @@
 </head>
 <body>
   <main>
-    <h1>GPUquick</h1>
+
+
+      <header>
+        <!-- <h1>GPUquick</h1> -->
+
+          <script>
+          AddMenuButtons("menu");
+          </script>
+          <!-- <div class="button-menu"><a href="dx.html">Graphics</a></div>
+          <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
+          -->
+
+
+      </header>
 
     <div id="wrapper">
-      <div id="menu">
-        <div class="button-menu"><a href="dx.html">Graphics</a></div>
-        <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
-      </div>
+
 
       <div id="textblock-instruction">
+
+
+
+
+        <div id="test">
         <script>
-          AddCodeBlock("textblock-instruction");
+          AddCodeBlock("test");
         </script>
 
 
@@ -173,27 +188,21 @@
           </pre>
         </div>
         </div>
-
-
-
-        <h2>Setting up a DirectX 11 appliction</h2>
-          <h3>Create a C++ project in Visual Studios</h3>
-            <p>1. Create an empty Win32 application.</p>
-            <p>2. Change so that the application compiles for an x64 system.</p>
-            <p>3. Create a main source file.
-              <br/>(The .cpp file that will hold the entry point to your program.)
-              <br/> 3.1 If you created the project as a console application, you may get a link error LNK2019 saying someting... invoke_main(void) ...
-              <br/> To fix this: Right click the Project-> Properties-> Configuration properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS.
-            </p>
-          <h3>Give the compiler some code to work with</h3>
-            <p>Paste the code, found to the right, into the main file.</p>
-            <p>1. Set up a window</p>
-            <p>2. Initialize directx</p>
-
       </div>
-
-
-
+      <h2>Setting up a DirectX 11 appliction</h2>
+        <h3>Create a C++ project in Visual Studios</h3>
+          <p>1. Create an empty Win32 application.</p>
+          <p>2. Change so that the application compiles for an x64 system.</p>
+          <p>3. Create a main source file.
+            <br/>(The .cpp file that will hold the entry point to your program.)
+            <br/> 3.1 If you created the project as a console application, you may get a link error LNK2019 saying someting... invoke_main(void) ...
+            <br/> To fix this: Right click the Project-> Properties-> Configuration properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS.
+          </p>
+        <h3>Give the compiler some code to work with</h3>
+          <p>Paste the code, found to the right, into the main file.</p>
+          <p>1. Set up a window</p>
+          <p>2. Initialize directx</p>
+</div>
     </div>
   </main>
 

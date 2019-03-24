@@ -14,7 +14,40 @@ function ReadTextFile(event)
       reader.readAsText(input.files[0]);
 };
 
+function AddMenuButtons()
+{
+  var header = document.getElementsByTagName("header")[0];
+  //Name, Href
+  var listOfButtons = [
+    ["Graphics", "dx.html"],
+    ["Machine Learning", "ml.html"]
+    //["blog", "asdf
 
+  ]
+
+
+
+  for (var i = 0; i < listOfButtons.length; ++i)
+  {
+    var textNode = document.createTextNode(listOfButtons[i][0]);
+    var menuButton = document.createElement('div');
+    var hyperLink = document.createElement('a');
+
+// <div class="button-menu"><a href="dx.html">Graphics</a></div>
+
+    //add link and text to button
+    hyperLink.href = listOfButtons[i][1];
+    hyperLink.appendChild(textNode);
+
+    menuButton.className = 'button-menu';
+    menuButton.appendChild(hyperLink);
+
+    header.appendChild(menuButton);
+
+  }
+
+
+}
 
 function AddCodeBlock(instructionBlockId)
 {

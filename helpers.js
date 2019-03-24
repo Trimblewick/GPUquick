@@ -62,8 +62,12 @@ function AddCodeBlock(instructionBlockId, fileName)
     return;
 
   var code = document.createTextNode(rawFile);
+  var codeDiv = document.createElement('div');
   var pre = document.createElement('pre');
   pre.appendChild(code);
+
+  codeDiv.setAttribute("id", fileName);
+  codeDiv.appendChild(pre);
 
   //Create head for codeblock
   var header = document.createElement('H2');
@@ -72,13 +76,13 @@ function AddCodeBlock(instructionBlockId, fileName)
 
   //create and add buttons in <h2> title
   var collapseButton = document.createElement('button');
-  collapseButton.onclick = function() { Collapse(collapseButton, 'main.cpp'); }
+  collapseButton.onclick = function() { Collapse(collapseButton, fileName); }
   collapseButton.className = "button-collape";
 
   header.appendChild(collapseButton);
 
   var copyButton = document.createElement('button');
-  copyButton.onclick = function() { CopyDivToClipboard('main.cpp'); }
+  copyButton.onclick = function() { CopyDivToClipboard(fileName); }
   copyButton.className = "button-copy";
 
   header.appendChild(copyButton);
@@ -86,7 +90,7 @@ function AddCodeBlock(instructionBlockId, fileName)
   //append in order
   codeBlockHeader.appendChild(header);
   codeBlock.appendChild(codeBlockHeader);
-  codeBlock.appendChild(pre);
+  codeBlock.appendChild(codeDiv);
 
   instructionBlock.appendChild(codeBlock);
 

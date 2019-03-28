@@ -3,32 +3,60 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>GPUretarded</title>
+    <link rel="stylesheet" type="text/css" href="buttons.css">
+    <script type="text/javascript" src="buttons.js"></script>
+    <script type="text/javascript" src="helpers.js"></script>
+    <title>GPUquick</title>
 </head>
 <body>
   <main>
-    <h1>Machine Learning</h1>
+    <header>
+      <!-- <h1>GPUquick</h1> -->
+      <script>
+        AddMenuButtons();
+      </script>
+    </header>
 
     <div id="wrapper">
-      <div id="menu"></div>
-      <div id="textblock-instruction">
-        <div id="textblock-code">
+      <div id="instruction">
+        <div id="codewrapper">
+          <script>
+            AddCodeBlock("codewrapper", "DX11Triangle/Triangle.cpp");
+            AddCodeBlock("codewrapper", "DX11Triangle/VertexShader.hlsl");
+            AddCodeBlock("codewrapper", "DX11Triangle/PixelShader.hlsl");
+          </script>
+        </div> <!-- end codewrapper -->
+
+        <h2>Setting up a basic DirectX 11 appliction</h2>
+          <h3>Create a C++ project in Visual Studios</h3>
+          <ol>
+            <li> Create an empty or a console application.</li>
+            <li> Change so that it compiles for x64 bit.</li>
+          </ol>
+
+          <h3>Give the compiler some code to work with</h3>
+            <p>Create files and paste the code found to the right.</p>
+            <ol>
+              <li> Create a main source file.</li>
+              <ul>
+                <li>If you get <b>link error LNK2019</b> saying someting... invoke_main(void) ...</li>
+                Then: Right click the Project-> Properties-> Configuration Properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS. (Or maybe go to CONSOLE)
+              </ul>
+              <li> Create shaders</li>
+              <ul>
+                <li>Make sure the shaders have VSmain/PSmain as the entry point.</li>
+                <li>Also set the target to vs_5_0 and ps_5_0 respectively.</li>
+                To find the settings: Right click a shader-> Properties-> Configuration Properties-> HLSL Compiler-> General
+              </ul>
+            </ol>
 
 
-          <pre>
-            Lite dx kod här kanske
-          </pre>
-        </div>
+
+            <p>1. Set up a window</p>
+            <p>2. Initialize directx</p>
 
 
-
-        <h2>h2 rubrik här</h2>
-          <h3>h3 här</h3>
-            <p>p taggen</p>
-
-
-      </div>
-
+        </div> <!-- end instruction -->
     </div>
   </main>
 
@@ -38,6 +66,7 @@
       </p>
   </footer>
 
-  <script type="text/javascript" src="main.js"></script>
+
+
 </body>
 </html>

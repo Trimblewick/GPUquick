@@ -58,6 +58,10 @@ pre {
   margin: 0;
 }
 
+li {
+  font-size: 1.2em;
+}
+
 #wrapper {
   height: auto;
   width: auto;

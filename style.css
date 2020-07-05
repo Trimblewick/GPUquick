@@ -6,7 +6,6 @@ main {
     width: auto;
     height: auto;
     background-color: #ccc;
-
     text-align: center;
 }
 
@@ -49,71 +48,51 @@ a:hover {
     background: #eff;
 }
 
-pre {
-  width: 98.25%;
-  overflow: auto;
-  /* border: 1px solid #aaa; */
-  padding-left: 1.5%;
-  padding-bottom: 2em;
-  margin: 0;
-}
-
-li {
-  font-size: 1.2em;
-}
-
 #wrapper {
   height: auto;
-  width: auto;
-
+  width: 80%;
+  margin-left: 10%;
   display: flex;
-
-  text-align: left;
-
 }
 
-#instruction {
+#post {
   height: auto;
   width: 100%;
-
   text-align: left;
-
-
-  margin-left: 6pt;
-  float: left;
   padding: 1em;
+  padding-top: 0;
   color: #ccc;
-
   border:4pt solid #999;
   background-color: #444;
 }
 
-#codewrapper {
-  float: right;
-  width: 40em;
-  padding: 1em;
-  height:auto;
-}
-
-#codeblock {
+#collapsableblock {
   height: auto;
-  width: 40em;
-
+  width:  auto;
   text-align: left;
-
   color: black;
-  float: right;
-  padding-left: 1em;
-  padding: 2pt;
-
+  float: center;
+  padding: 2em;
+  padding-top: 0;
   border:4pt solid #999;
   background-color: #ccc;
   margin-bottom: 1em;
 }
 
-#codeheader{
-  height: 4em;
+#collapsableblockheader{
+  height: 3em;
   width: auto;
-  text-align: left;
+  text-align: center;
+  padding-left: 1em;
   margin-left: 1em;
+}
+
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport{
+  width: extend-to-zoom;
+  zoom: 1.0;
 }

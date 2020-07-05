@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="buttons.css">
     <script type="text/javascript" src="buttons.js"></script>
@@ -22,187 +23,45 @@
     </header>
 
     <div id="wrapper">
-      <div id="instruction">
-        <div id="codewrapper">
-          <script>
-            AddCodeBlock("codewrapper", "test2.txt");
-          </script>
-
-          <div id="codeblock">
-            <div id="codeheader">
-              <h2>main.cpp
-                <button class="button-copy" onclick="CopyDivToClipboard('main.cpp')"></button>
-                <button class="button-collape" onclick="Collapse(this, 'main.cpp')"></button>
-              </h2>
-            </div>
-
-            <div id="main.cpp">
-              <pre>
-  #include &lt;windows.h&gt;
-  #include &lt;d3d11.h&gt;
-
-  #pragma comment(lib, "d3d11.lib")
-
-
-  LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-
-  INT WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
-  {
-  	float windowWidth = 800;
-  	float windowHeight = 600;
-
-  	// Register the window class.
-  	const wchar_t CLASS_NAME[] = L"Sample Window Class";
-
-  	WNDCLASS wc = {};
-
-  	wc.lpfnWndProc = WindowProcedure;
-  	wc.hInstance = hInstance;
-  	wc.lpszClassName = CLASS_NAME;
-
-  	RegisterClass(&amp;wc);
-
-        //Create the window.
-        HWND hwnd = CreateWindowEx(0, CLASS_NAME, L"Window Display Name",
-          WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, windowWidth,
-          windowHeight, NULL, NULL, hInstance, NULL);
-
-
-  	if (hwnd == NULL)
-  	{
-  		return 0;
-  	}
-
-  	ShowWindow(hwnd, nCmdShow);
-
-  	// INIT DIRECTX
-  	UINT createDeviceFlags = D3D11_CREATE_DEVICE_DEBUG;
-  	ID3D11Device* device = nullptr;
-  	ID3D11DeviceContext* deviceContext = nullptr;
-  	IDXGISwapChain* swapChain = nullptr;
-  	ID3D11RenderTargetView* renderTargetView = nullptr;
-        ID3D11Texture2D* backBufferTexture = nullptr;
-  	D3D_DRIVER_TYPE driverType = D3D_DRIVER_TYPE_HARDWARE;
-  	D3D_FEATURE_LEVEL featureLevel = D3D_FEATURE_LEVEL_11_0;
-  	D3D11_VIEWPORT viewPort;
-
-  	//CREATE SWAP CHAIN
-  	DXGI_SWAP_CHAIN_DESC swapChainDesc;
-  	swapChainDesc.BufferCount = 1;
-  	swapChainDesc.BufferDesc.Width = windowWidth;
-  	swapChainDesc.BufferDesc.Height = windowHeight;
-  	swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-  	swapChainDesc.BufferDesc.RefreshRate.Numerator = 60;
-  	swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
-  	swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-  	swapChainDesc.OutputWindow = hwnd;
-  	swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-  	swapChainDesc.Windowed = true;
-  	swapChainDesc.SampleDesc.Count = 1;
-  	swapChainDesc.SampleDesc.Quality = 0;
-  	swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
-
-        HRESULT hr = D3D11CreateDeviceAndSwapChain(NULL, driverType, NULL,
-          createDeviceFlags, &amp;featureLevel, 1, D3D11_SDK_VERSION, &amp;swapChainDesc,
-          &amp;swapChain, &amp;device, NULL, &amp;deviceContext);
-
-  	//CREATE RENDERTARGETVIEW
-  	swapChain->GetBuffer(NULL, __uuidof(ID3D11Texture2D),
-          reinterpret_cast&lt;void**&gt;(&amp;backBufferTexture));
-
-  	device->CreateRenderTargetView(backBufferTexture, nullptr, &amp;renderTargetView);
-
-  	//bind the rendertargetview
-  	deviceContext->OMSetRenderTargets(1, &amp;renderTargetView, nullptr);
-
-  	//CREATE VIEWPORT
-  	viewPort.Width = static_cast&lt;float&gt;(windowWidth);
-  	viewPort.Height = static_cast&lt;float&gt;(windowHeight);
-  	viewPort.TopLeftX = 0;
-  	viewPort.TopLeftY = 0;
-  	viewPort.MinDepth = 0.0f;
-  	viewPort.MaxDepth = 1.0f;
-
-  	//bind the viewport
-  	deviceContext->RSSetViewports(1, &amp;viewPort);
-  	//DONE
-
-
-  	// Run the message loop.
-  	MSG msg = {};
-  	while (GetMessage(&amp;msg, NULL, 0, 0))
-  	{
-  		TranslateMessage(&amp;msg);
-  		DispatchMessage(&amp;msg);
-
-  		float clearColor[4] = { 1, 0, 0, 1 };
-  		deviceContext->ClearRenderTargetView(renderTargetView, clearColor);
-
-  		swapChain->Present(0, 0);
-  	}
-
-  	//dont forget to release id3d11
-  	backBufferTexture->Release();
-  	renderTargetView->Release();
-  	swapChain->Release();
-  	deviceContext->Release();
-  	device->Release();
-
-  	return 0;
-  }
-
-  LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-  {
-  	switch (uMsg)
-  	{
-  	case WM_DESTROY:
-  		PostQuitMessage(0);
-  		return 0;
-
-  	case WM_PAINT:
-  	{
-  		PAINTSTRUCT ps;
-  		HDC hdc = BeginPaint(hwnd, &amp;ps);
-
-  		FillRect(hdc, &amp;ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
-
-  		EndPaint(hwnd, &amp;ps);
-  	}
-  	return 0;
-
-  	}
-  	return DefWindowProc(hwnd, uMsg, wParam, lParam);
-  }
-            </pre>
+      <div id="post">
+	      <h1> jumped over the lazy dog </h1>
+        <div id="collapsableblock">
+          <div id="collapsableblockheader">
+	    <div>
+              <button class="button-copy" onclick="CopyDivToClipboard('The quick brown fox')"></button>
+              <button class="button-collape" onclick="Collapse(this, 'The quick brown fox')"></button>
+	    </div>
+            <h2>The quick brown fox</h2>
+          </div>
+          <div id="The quick brown fox">
+	    Hej hej.The quick brown fokx
+ hej hej hej hej
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
           </div>
         </div>
-      </div>
-
-        <h2>Setting up a DirectX 11 appliction</h2>
-          <h3>Create a C++ project in Visual Studios</h3>
-            <p>1. Create an empty Win32 application.</p>
-            <p>2. Change so that the application compiles for an x64 system.</p>
-            <p>3. Create a main source file.
-              <br/>(The .cpp file that will hold the entry point to your program.)
-              <br/> 3.1 If you created the project as a console application, you may get a link error LNK2019 saying someting... invoke_main(void) ...
-              <br/> To fix this: Right click the Project-> Properties-> Configuration properties-> Linker -> System -> SubSystem: Set it to SUBSYSTEM:WINDOWS.
-            </p>
-          <h3>Give the compiler some code to work with</h3>
-            <p>Paste the code, found to the right, into the main file.</p>
-            <p>1. Set up a window</p>
-            <p>2. Initialize directx</p>
-
-
-        </div> <!-- end texblock instruction -->
-
-    </div>
-  </main>
-
+	    Hej hej.The quick brown fokx
+ hej hej hej hej
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
+	  The quick brown fox <br>
+	  Jumped over the lazy dog <br>
+          
+     </div> <!-- end of post -->
+    </div> <!-- end wrapper -->
   <footer>
       <p>Links:
-          <a href="">Twitter</a>
+          <a href="">Test</a>
       </p>
   </footer>
+  </main>
+
 
 
 

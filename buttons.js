@@ -51,6 +51,4 @@ function Collapse(element, containerid)
     content.style.display = "none";
     element.style.backgroundImage = "url(maximize.png)";
   }
-
-
 }

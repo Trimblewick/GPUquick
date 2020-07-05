@@ -12,16 +12,14 @@
     font-weight: bold;
 }
 
-
-
 .button-copy{
     float: right;
-    width: 2.1em;
-    height: 2.1em;
-    margin-right: 2pt;
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
 
     background-image:url(clipboard.png);
-    background-size: 1.8em;
+    background-size: 2.7em;
 }
 
 .button-copy:hover{
@@ -32,12 +30,12 @@
 /* Style the button that is used to open and close the collapsible content */
 .button-collape {
   float: right;
-  width: 2.1em;
-  height: 2.1em;
+  width: 3em;
+  height: 3em;
   margin-right: 1em;
 
   background-image:url(minimize.png);
-  background-size: 1.75em;
+  background-size: 2.65em;
 
 }
 

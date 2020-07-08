@@ -57,12 +57,16 @@ a:hover {
 }
 
 #toc-wrapper {
-
+  height: auto;
+  width: 100%;
+  float:top;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #toc {
   height: auto;
-  width: 33%;
+  width: 16em;
   padding: 1em;
   padding-top: 0;
   color: #ccc;
@@ -83,9 +87,10 @@ a:hover {
 #post {
   height: auto;
   width: auto;
+  float: center;
   padding: 0;
   color: #ccc;
-  border-bottom:1pt solid #000;
+  border-top:1pt solid #000;
   background-color: #444;
 }
 

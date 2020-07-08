@@ -1,15 +1,11 @@
-
-
-
-
 function AddMenuButtons()
 {
   var header = document.getElementsByTagName("header")[0];
   //Name, Href
   var listOfButtons = [
     ["Graphics", "dx.html"],
-    ["Machine Learning", "ml.html"]
-    //["blog", "asdf
+    ["Recipes", "recipes.html"],
+    ["Blog", ""]
 
   ];
 
@@ -93,6 +89,9 @@ function AddCodeBlock(instructionBlockId, fileName)
   codeBlock.appendChild(codeDiv);
 
   instructionBlock.appendChild(codeBlock);
-
-
 }
+
+//function AddTocMenu (loc)
+//{
+//  for (var i = 0; i < listOfButtons.length; ++i)
+//}

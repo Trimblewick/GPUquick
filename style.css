@@ -53,9 +53,23 @@ a:hover {
   width: 80%;
   margin-left: 10%;
   display: flex;
+  flex-wrap: wrap;
 }
 
-#post {
+#toc-wrapper {
+
+}
+
+#toc {
+  height: auto;
+  width: 33%;
+  padding: 1em;
+  padding-top: 0;
+  color: #ccc;
+  background-color: #444;
+}
+
+#post-wrapper {
   height: auto;
   width: 100%;
   text-align: left;
@@ -63,6 +77,15 @@ a:hover {
   padding-top: 0;
   color: #ccc;
   border:4pt solid #999;
+  background-color: #444;
+}
+
+#post {
+  height: auto;
+  width: auto;
+  padding: 0;
+  color: #ccc;
+  border-bottom:1pt solid #000;
   background-color: #444;
 }
 

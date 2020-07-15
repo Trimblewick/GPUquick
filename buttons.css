@@ -12,6 +12,22 @@
     font-weight: bold;
 }
 
+.to-top {
+	text-align: left;
+	background: #444;
+	color: #ccc;
+}
+
+.to-top:hover {
+	
+	color: #ccc;
+	background: #444;
+}
+
+.to-top:visited {
+	color: #ccc;
+}
+
 .button-copy{
     float: right;
     width: 3em;
@@ -28,18 +44,17 @@
 }
 
 /* Style the button that is used to open and close the collapsible content */
-.button-collape {
+.button-collapse {
   float: right;
   width: 3em;
   height: 3em;
   margin-right: 1em;
-
-  background-image:url(minimize.png);
+  background-image:url(maximize.png);
   background-size: 2.65em;
 
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.button-collape:hover {
+.button-collapse:hover {
   background-color: #ccc;
 }

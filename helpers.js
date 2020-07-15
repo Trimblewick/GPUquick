@@ -91,6 +91,42 @@ function AddCodeBlock(instructionBlockId, fileName)
   instructionBlock.appendChild(codeBlock);
 }
 
+function TestTest(asdf)
+{
+  var keke = document.createElement('h1');
+  var textNode = document.createTextNode("TESTS");
+  keke.appendChild(textNode);
+  asdf.appendChild(keke);
+}
+
+function AddCollapsableBlockHeader(idcollapse, rubriktext)
+{
+  var parentTag = document.getElementsByTagName('script');
+  parentTag = parentTag[parentTag.length - 1].parentNode;
+
+  var colblockhead = document.createElement('div');
+  colblockhead.setAttribute("id", "collapsableblockheader");
+  var buttondiv = document.createElement('div');
+  var buttonCopy = document.createElement('button');
+  var buttonCol = document.createElement('button');
+  buttonCopy.setAttribute("class", "button-copy"); 
+  buttonCopy.setAttribute("onclick", "CopyDivToClipboard('"+idcollapse+"')"); 
+  buttonCol.setAttribute("class", "button-collapse"); 
+  buttonCol.setAttribute("onclick", "Collapse(this, '"+idcollapse+"')"); 
+  buttondiv.appendChild(buttonCopy);
+  buttondiv.appendChild(buttonCol);
+
+  var rubrik = document.createElement('h2');
+  var rubrikTextNode = document.createTextNode(rubriktext);
+  rubrik.appendChild(rubrikTextNode);
+
+  colblockhead.appendChild(buttondiv);
+  colblockhead.appendChild(rubrik);
+
+  parentTag.appendChild(colblockhead);
+}
+
+
 //function AddTocMenu (loc)
 //{
 //  for (var i = 0; i < listOfButtons.length; ++i)

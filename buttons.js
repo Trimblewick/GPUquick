@@ -44,11 +44,17 @@ function Collapse(element, containerid)
   if (content.style.display === "none")
   {
     content.style.display = "block";
-    element.style.backgroundImage = "url(minimize.png)";
+    if (element.className === 'button-collapse')
+    {
+	    element.style.backgroundImage = "url(minimize.png)";
+    }
   }
   else
   {
     content.style.display = "none";
-    element.style.backgroundImage = "url(maximize.png)";
+    if (element.className === 'button-collapse')
+    {
+    	    element.style.backgroundImage = "url(maximize.png)";
+    }
   }
 }

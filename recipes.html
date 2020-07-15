@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="buttons.css">
-    <link rel="stylesheet" type="text/css" href="tableofcontents.css">
     <script type="text/javascript" src="buttons.js"></script>
     <script type="text/javascript" src="helpers.js"></script>
     <title>GPUquick</title>
@@ -16,20 +15,17 @@
       <script>
       AddMenuButtons();
       </script>
-      <!-- <div class="button-menu"><a href="dx.html">Graphics</a></div>
-      <div class="button-menu"><a href="ml.html">Machine Learning</a></div>
-      -->
     </header>
 
     <div id="wrapper">
       <div id="post-wrapper">
 
 
-	      <div id="toc-wrapper"> <!-- menu -->
+		<div id="toc-wrapper"> <!-- menu -->
       <div id="toc">
       <h2>Chicken</h2>
-      <div class="button-menu"><a href=#rslngiskiten> Just throw it into the oven </a></div>
-      <div class="button-menu"><a href=#rbnormedkykling> Beans with beans and chicken </a></div>
+      <div class="button-menu"><a href=#rslngiskiten onclick="Collapse(this, 'lslngiskiten');Collapse(this, 'islngiskiten')"> Just throw it into the oven </a></div>
+      <div class="button-menu"><a href=#rbnormedkykling onclick="Collapse(this, 'lbnormedkykling');Collapse(this, 'ibnormedkykling')"> Beans with beans and chicken </a></div>
       </div>
       <div id="toc">
       <h2>Non-meat</h2>
@@ -45,14 +41,15 @@
 	  Where instructions are lacking, just go with your gut! <br/>
 	  If you fancy a certain ingredient, add more of it.-->
 	<div id="collapsableblock">
-          <div id="collapsableblockheader">
+	<script>AddCollapsableBlockHeader("lslngiskiten", "Shopping list");</script>
+          <!--<div id="collapsableblockheader">
 	    <div>
               <button class="button-copy" onclick="CopyDivToClipboard('lslngiskiten')"></button>
-              <button class="button-collape" onclick="Collapse(this, 'lslngiskiten')"></button>
+              <button class="button-collapse" onclick="Collapse(this, 'lslngiskiten')"></button>
 	    </div>
             <h2>Shopping list</h2>
-          </div>
-          <div id="lslngiskiten">
+	  </div>-->
+          <div id="lslngiskiten" style="display: none">
 	  <p><b>Ingredients:</b><br/>
 	  Chicken breasts - 500-1000 grams <br/>
 	  Chorizo sausage - 300-500 grams <br/>
@@ -79,11 +76,11 @@
           <div id="collapsableblockheader">
 	    <div>
               <button class="button-copy" onclick="CopyDivToClipboard('islngiskiten')"></button>
-              <button class="button-collape" onclick="Collapse(this, 'islngiskiten')"></button>
+              <button class="button-collapse" onclick="Collapse(this, 'islngiskiten')"></button>
 	    </div>
             <h2>Instructions</h2>
           </div>
-          <div id="islngiskiten">
+          <div id="islngiskiten" style="display: none">
 	  <p>Set oven to <b>175</b> degrees celsius.<br/></p>
 	  <p>Chop all choppable ingredients.<br/>
 	  Pour all ingredients into a deep baking dish and just throw it into the oven. </p>
@@ -91,6 +88,7 @@
 	  <p>Serve with what ever carbs.</p>
 	  </div>
         </div>
+	<i><a href="#top" class="to-top">Top of page</a></i>
      </div> <!-- end of post -->
 
 
@@ -101,14 +99,14 @@
           <div id="collapsableblockheader">
 	    <div>
               <button class="button-copy" onclick="CopyDivToClipboard('lbnormedkykling')"></button>
-              <button class="button-collape" onclick="Collapse(this, 'lbnormedkykling')"></button>
+              <button class="button-collapse" onclick="Collapse(this, 'lbnormedkykling')"></button>
 	    </div>
             <h2>Shopping list</h2>
           </div>
-          <div id="lbnormedkykling">
+          <div id="lbnormedkykling" style="display: none">
 	  <p><b>Ingredients:</b><br/>
 	  Chicken breasts <br/>
-	  Onions
+	  Onions<br/>
 	  Chickpeas<br/>
 	  Mixed beans<br/>
 	  Coconut milk <br/>
@@ -129,16 +127,16 @@
           <div id="collapsableblockheader">
 	    <div>
               <button class="button-copy" onclick="CopyDivToClipboard('ibnormedkykling')"></button>
-              <button class="button-collape" onclick="Collapse(this, 'ibnormedkykling')"></button>
+              <button class="button-collapse" onclick="Collapse(this, 'ibnormedkykling')"></button>
 	    </div>
             <h2>Instructions</h2>
           </div>
-          <div id="ibnormedkykling">
-	  <p>Find a large pot.</p>
-	  <p>Chop and fry onions and chicken breasts in the pot.<br/>
-	  Throw in all but the brocolli. Add the brocolli as soon as the sauce is boiling.</p>
+          <div id="ibnormedkykling" style="display: none">
+	  <p>Chop and fry onions and chicken breasts in a large pot.<br/>
+	  Add all but the brocolli. As soon as the sauce is boiling add the brocolli.</p>
 	  </div>
         </div>
+	<i><a href="#top" class="to-top">Top of page</a></i>
 	</div> <!-- end of post -->
      </div> <!-- end post wrapper -->
     </div> <!-- end wrapper -->

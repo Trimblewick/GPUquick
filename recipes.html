@@ -11,54 +11,54 @@
 </head>
 <body>
   <main>
+    <div id="wrapper">
     <header>
       <script>
       AddMenuButtons();
       </script>
     </header>
 
-    <div id="wrapper">
       <div id="post-wrapper">
 
 
 		<div id="toc-wrapper"> <!-- menu -->
-      <div id="toc">
+      <div id="toc"> <!--column-->
       <h2>Chicken</h2>
-      <div class="button-menu"><a href=#rslngiskiten onclick="Collapse(this, 'lslngiskiten');Collapse(this, 'islngiskiten')"> Just throw it into the oven </a></div>
-      <div class="button-menu"><a href=#rbnormedkykling onclick="Collapse(this, 'lbnormedkykling');Collapse(this, 'ibnormedkykling')"> Beans with beans and chicken </a></div>
+      <div class="button-toc linkhover"><a href=#rslngiskiten onclick="Collapse(this, 'lslngiskiten');Collapse(this, 'islngiskiten')"> Just throw it into the oven </a></div>
+      <div class="button-toc linkhover"><a href=#rbnormedkykling onclick="Collapse(this, 'lbnormedkykling');Collapse(this, 'ibnormedkykling')"> Beans with beans and chicken </a></div>
       </div>
-      <div id="toc">
+
+      <div id="toc"> <!--column-->
       <h2>Non-meat</h2>
-      <div class="button-menu"><a href=#rslngiskiten>placeholder</a></div>
+      <div class="button-toc linkhover"><a href=#rslngiskiten>placeholder</a></div>
+      </div>
+
+      <div id="toc"> <!--column-->
+      <h2>Fish</h2>
+      <div class="button-toc linkhover"><a href=#rslngiskiten>placeholder</a></div>
       </div>
       		</div> <!-- end menu -->
 
 
+	<h1>Recipes as fancy as they are complicated. </h1>
+	 <p>Go with your gut. <br/>
+	  Experiment with new ingredients. <br/>
+	  More is always better! </p>
 
       <div id="post">
 	<h1 id=rslngiskiten> Just throw it into the oven </h1>
-	  <!--The recipes are as fancy as they are complicated. <br/>
-	  Where instructions are lacking, just go with your gut! <br/>
-	  If you fancy a certain ingredient, add more of it.-->
 	<div id="collapsableblock">
 	<script>AddCollapsableBlockHeader("lslngiskiten", "Shopping list");</script>
-          <!--<div id="collapsableblockheader">
-	    <div>
-              <button class="button-copy" onclick="CopyDivToClipboard('lslngiskiten')"></button>
-              <button class="button-collapse" onclick="Collapse(this, 'lslngiskiten')"></button>
-	    </div>
-            <h2>Shopping list</h2>
-	  </div>-->
           <div id="lslngiskiten" style="display: none">
 	  <p><b>Ingredients:</b><br/>
-	  Chicken breasts - 500-1000 grams <br/>
-	  Chorizo sausage - 300-500 grams <br/>
+	  Chicken breasts <br/>
+	  Chorizo sausage <br/>
 	  Zucchini <br/>
 	  Pepper <br/>
-	  Onions - 4-5 <br/>
+	  Onions <br/>
 	  Garlic <br/>
-	  Chickpeas - 1-2 cans<br/>
-	  Mixed olives - 200 grams<br/>
+	  Chickpeas <br/>
+	  Mixed olives <br/>
 	  <br/>
 	  <b>Carbs:</b><br/>
 	  Couscous or rice<br/></p>
@@ -73,13 +73,7 @@
 	  </div>
         </div>
         <div id="collapsableblock">
-          <div id="collapsableblockheader">
-	    <div>
-              <button class="button-copy" onclick="CopyDivToClipboard('islngiskiten')"></button>
-              <button class="button-collapse" onclick="Collapse(this, 'islngiskiten')"></button>
-	    </div>
-            <h2>Instructions</h2>
-          </div>
+	<script>AddCollapsableBlockHeader("islngiskiten", "Instructions");</script>
           <div id="islngiskiten" style="display: none">
 	  <p>Set oven to <b>175</b> degrees celsius.<br/></p>
 	  <p>Chop all choppable ingredients.<br/>
@@ -96,13 +90,7 @@
 	<div id="post">
 	<h1 id=rbnormedkykling> Beans with beans and chicken </h1>
 	<div id="collapsableblock">
-          <div id="collapsableblockheader">
-	    <div>
-              <button class="button-copy" onclick="CopyDivToClipboard('lbnormedkykling')"></button>
-              <button class="button-collapse" onclick="Collapse(this, 'lbnormedkykling')"></button>
-	    </div>
-            <h2>Shopping list</h2>
-          </div>
+	<script>AddCollapsableBlockHeader("lbnormedkykling", "Shopping list");</script>
           <div id="lbnormedkykling" style="display: none">
 	  <p><b>Ingredients:</b><br/>
 	  Chicken breasts <br/>
@@ -124,13 +112,7 @@
 	  </div>
         </div>
         <div id="collapsableblock">
-          <div id="collapsableblockheader">
-	    <div>
-              <button class="button-copy" onclick="CopyDivToClipboard('ibnormedkykling')"></button>
-              <button class="button-collapse" onclick="Collapse(this, 'ibnormedkykling')"></button>
-	    </div>
-            <h2>Instructions</h2>
-          </div>
+	<script>AddCollapsableBlockHeader("ibnormedkykling", "Instructions");</script>
           <div id="ibnormedkykling" style="display: none">
 	  <p>Chop and fry onions and chicken breasts in a large pot.<br/>
 	  Add all but the brocolli. As soon as the sauce is boiling add the brocolli.</p>

@@ -3,28 +3,43 @@ function AddMenuButtons()
   var header = document.getElementsByTagName("header")[0];
   //Name, Href
   var listOfButtons = [
-    ["Graphics", "dx.html"],
     ["Recipes", "recipes.html"],
-    ["Blog", ""]
-
+    ["Blog", "blog.html"],
+    ["Vim", "vim.html"]
   ];
 
+  var voidButton = document.createElement('div');
+  voidButton.setAttribute('class', 'button-menu-void');
+  header.appendChild(voidButton);
+
+  var currentPage = window.location.pathname.split("/").pop();
   for (var i = 0; i < listOfButtons.length; ++i)
   {
     var textNode = document.createTextNode(listOfButtons[i][0]);
     var menuButton = document.createElement('div');
     var hyperLink = document.createElement('a');
+    menuButton.setAttribute('class', 'button-menu linkhover');
+    menuButton.onclick = function () { currentButton=listOfButtons[i][0]; };
 
-    //add link and text to button
-    hyperLink.href = listOfButtons[i][1];
+    if (listOfButtons[i][1] != currentPage)
+    {
+      hyperLink.href = listOfButtons[i][1];
+    }
+    else
+    {
+			menuButton.setAttribute('style', 'border-bottom-color: #444; background-color: #444;');
+			hyperLink.setAttribute('style', 'color: black;');
+    }
+
     hyperLink.appendChild(textNode);
-
-    //set class
-    menuButton.className = 'button-menu';
     menuButton.appendChild(hyperLink);
 
-    //append
+    //append button
     header.appendChild(menuButton);
+    //append void button inbetween
+    voidButton = document.createElement('div');
+    voidButton.setAttribute('class', 'button-menu-void');
+    header.appendChild(voidButton);
   }
 }
 
@@ -91,14 +106,6 @@ function AddCodeBlock(instructionBlockId, fileName)
   instructionBlock.appendChild(codeBlock);
 }
 
-function TestTest(asdf)
-{
-  var keke = document.createElement('h1');
-  var textNode = document.createTextNode("TESTS");
-  keke.appendChild(textNode);
-  asdf.appendChild(keke);
-}
-
 function AddCollapsableBlockHeader(idcollapse, rubriktext)
 {
   var parentTag = document.getElementsByTagName('script');
@@ -126,8 +133,3 @@ function AddCollapsableBlockHeader(idcollapse, rubriktext)
   parentTag.appendChild(colblockhead);
 }
 
-
-//function AddTocMenu (loc)
-//{
-//  for (var i = 0; i < listOfButtons.length; ++i)
-//}

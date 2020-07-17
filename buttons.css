@@ -1,27 +1,41 @@
 .button-menu {
-    width: 15em;
+    width: 100%;
     height: auto;
-
     display: inline-block;
-    border: 2pt solid #999;
-    margin: 2pt;
-    margin-bottom: 3pt;
+    border: 4pt solid #999;
     background: #234;
-    border-radius: 3pt;
-
+    border-radius: 0;
     font-weight: bold;
+}
+
+.button-menu-void {
+    width: 5%;
+    height: calc(100%-4pt);
+    display: inline-block;
+    border-bottom: 4pt solid #999;
+    border-radius: 0;
+}
+
+.button-toc {
+    width: 90%;
+    height: auto;
+    display: inline-block;
+    border: 4pt solid #999;
+    margin: 6pt;
+    background: #234;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.linkhover:hover {
+    color: black;
+    background: #ccc;
 }
 
 .to-top {
 	text-align: left;
 	background: #444;
 	color: #ccc;
-}
-
-.to-top:hover {
-	
-	color: #ccc;
-	background: #444;
 }
 
 .to-top:visited {

@@ -10,22 +10,20 @@ main {
 }
 
 footer {
-    padding-top: 2em;
     text-align: center;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.25em;
 }
 
 header {
   height: auto;
-  width: auto;
-  float:top;
+  width: 100%;
+  float: bottom;
   text-align: center;
   color: black;
-  margin-bottom: 4pt;
-
+  display: flex;
 }
 a {
     display: block;
@@ -42,10 +40,8 @@ a:visited {
   color: grey;
 }
 
-
 a:hover {
-    color: black;
-    background: #eff;
+  color: black;
 }
 
 #wrapper {
@@ -81,6 +77,7 @@ a:hover {
   padding-top: 0;
   color: #ccc;
   border:4pt solid #999;
+  border-top: 0;
   background-color: #444;
 }
 

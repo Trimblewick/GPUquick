@@ -1,5 +1,7 @@
 html {
     background-color: #ccc;
+    overflow-y:scroll;
+    
 }
 
 main {

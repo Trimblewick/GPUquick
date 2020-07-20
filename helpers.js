@@ -27,8 +27,8 @@ function AddMenuButtons()
     }
     else
     {
-			menuButton.setAttribute('style', 'border-bottom-color: #444; background-color: #444;');
-			hyperLink.setAttribute('style', 'color: black;');
+      menuButton.setAttribute('style', 'border-bottom-color: #444; background-color: #444;');
+      hyperLink.setAttribute('style', 'color: black;');
     }
 
     hyperLink.appendChild(textNode);
@@ -81,7 +81,7 @@ function AddCodeBlock(instructionBlockId, fileName)
   codeDiv.appendChild(pre);
 
   //Create head for codeblock
-  var header = document.createElement('H2');
+  var header = document.createElement('h2');
   var headerText = document.createTextNode(fileName);
   header.appendChild(headerText);
 
@@ -106,29 +106,36 @@ function AddCodeBlock(instructionBlockId, fileName)
   instructionBlock.appendChild(codeBlock);
 }
 
-function AddCollapsableBlockHeader(idcollapse, rubriktext)
+function AddCollapsableBlockHeader(idcollapse, rubrik, date="")
 {
   var parentTag = document.getElementsByTagName('script');
   parentTag = parentTag[parentTag.length - 1].parentNode;
 
   var colblockhead = document.createElement('div');
   colblockhead.setAttribute("id", "collapsableblockheader");
+
   var buttondiv = document.createElement('div');
   var buttonCopy = document.createElement('button');
   var buttonCol = document.createElement('button');
+  var dateElement = document.createElement('h4');
+  buttondiv.setAttribute('style', 'float: right;');
   buttonCopy.setAttribute("class", "button-copy"); 
   buttonCopy.setAttribute("onclick", "CopyDivToClipboard('"+idcollapse+"')"); 
   buttonCol.setAttribute("class", "button-collapse"); 
   buttonCol.setAttribute("onclick", "Collapse(this, '"+idcollapse+"')"); 
+  dateElement.appendChild(document.createTextNode(date));
+  dateElement.setAttribute('style', 'float: bottom; margin: 0;');
+
   buttondiv.appendChild(buttonCopy);
   buttondiv.appendChild(buttonCol);
+  buttondiv.appendChild(dateElement);
 
-  var rubrik = document.createElement('h2');
-  var rubrikTextNode = document.createTextNode(rubriktext);
-  rubrik.appendChild(rubrikTextNode);
+  var rubrikElement = document.createElement('h2');
+  var rubrikTextNode = document.createTextNode(rubrik);
+  rubrikElement.appendChild(rubrikTextNode);
 
   colblockhead.appendChild(buttondiv);
-  colblockhead.appendChild(rubrik);
+  colblockhead.appendChild(rubrikElement);
 
   parentTag.appendChild(colblockhead);
 }

@@ -46,6 +46,13 @@ a:hover {
   color: black;
 }
 
+img {
+  float: right;
+  border:4pt solid #999;
+  display: inline-block;
+  margin-left: 1em;
+  padding: 0;
+}
 #wrapper {
   height: auto;
   width: 80%;

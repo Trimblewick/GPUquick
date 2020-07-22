@@ -5,7 +5,8 @@ function AddMenuButtons()
   var listOfButtons = [
     ["Recipes", "recipes.html"],
     ["Blog", "blog.html"],
-    ["Vim", "vim.html"]
+    ["Climbing", "climbing.html"],
+    ["Programming", "programming.html"]
   ];
 
   var voidButton = document.createElement('div');

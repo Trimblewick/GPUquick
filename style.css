@@ -39,6 +39,7 @@ img {
   height: auto;
   width: 80%;
   margin-left: 10%;
+  min-width: 450pt;
   display: flex;
   flex-wrap: wrap;
 }
@@ -58,6 +59,7 @@ img {
   padding-top: 0;
   color: #ccc;
   background-color: #444;
+  text-align: center;
 }
 
 #post-wrapper {

@@ -41,7 +41,7 @@ function Collapse(element, containerid)
 {
   var content = document.getElementById(containerid);
 
-  if (content.style.display === "none")
+  if (!content.style.display || content.style.display === "none")
   {
     content.style.display = "block";
     if (element.className === 'button-collapse')

@@ -19,12 +19,13 @@ function AddMenuButtons()
     var textNode = document.createTextNode(listOfButtons[i][0]);
     var menuButton = document.createElement('div');
     var hyperLink = document.createElement('a');
-    menuButton.setAttribute('class', 'button-menu linkhover');
+    menuButton.setAttribute('class', 'button-menu');
     menuButton.onclick = function () { currentButton=listOfButtons[i][0]; };
 
     if (listOfButtons[i][1] != currentPage)
     {
-      hyperLink.href = listOfButtons[i][1];
+      menuButton.href = listOfButtons[i][1];
+      menuButton.setAttribute('onclick', "window.location.href='"+listOfButtons[i][1]+"';");
     }
     else
     {

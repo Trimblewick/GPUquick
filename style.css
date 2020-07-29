@@ -22,37 +22,19 @@ p {
 header {
   height: auto;
   width: 100%;
-  float: bottom;
   text-align: center;
   color: black;
   display: flex;
 }
-a {
-    display: block;
-    width: 100%;
-    line-height: 2em;
-
-    text-align: center;
-    text-decoration: none;
-
-    color: grey;
-}
-
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: black;
-}
 
 img {
   float: right;
-  border:4pt solid #999;
+  border: 4pt solid #999;
   display: inline-block;
-  margin-left: 1em;
   padding: 0;
+  margin-left: 1em;
 }
+
 #wrapper {
   height: auto;
   width: 80%;
@@ -85,7 +67,7 @@ img {
   padding: 1em;
   padding-top: 0;
   color: #ccc;
-  border:4pt solid #999;
+  border: 4pt solid #999;
   border-top: 0;
   background-color: #444;
 }
@@ -96,8 +78,15 @@ img {
   float: center;
   padding: 0;
   color: #ccc;
-  border-top:1pt solid #000;
+  margin-top: 1em;
+  border-top: 1pt solid #000;
   background-color: #444;
+}
+
+.posttext {
+  overflow: hidden;
+  display: none;
+  margin-top: 1em;
 }
 
 #collapsableblock {

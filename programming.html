@@ -23,103 +23,71 @@
 
 		<div id="toc-wrapper"> <!-- menu -->
       <div id="toc"> <!--column-->
-      <h2>Chicken</h2>
-      <div class="button-toc linkhover"><a href=#rslngiskiten onclick="Collapse(this, 'lslngiskiten');Collapse(this, 'islngiskiten')"> Just throw it into the oven </a></div>
-      <div class="button-toc linkhover"><a href=#rbnormedkykling onclick="Collapse(this, 'lbnormedkykling');Collapse(this, 'ibnormedkykling')"> Beans with beans and chicken </a></div>
+      <h2>Tools</h2>
+      <div class="button-menu" onclick="Collapse(this, 'vim'); window.location='#vim';">Vim</div>
+      <div class="button-menu" onclick="Collapse(this, 'mdadm'); window.location='#mdadm';">Linux MDADM RAID</div>
       </div>
 
       <div id="toc"> <!--column-->
-      <h2>Non-meat</h2>
-      <div class="button-toc linkhover"><a href=#rslngiskiten>placeholder</a></div>
-      </div>
-
-      <div id="toc"> <!--column-->
-      <h2>Fish</h2>
-      <div class="button-toc linkhover"><a href=#rslngiskiten>placeholder</a></div>
+      <h2>Games</h2>
+      <div class="button-menu" onclick="Collapse(this, 'charactercontrollers'); window.location='#charactercontrollers';">Character controllers</div>
       </div>
       		</div> <!-- end menu -->
 
 
-	<h1>Recipes as fancy as they are complicated. </h1>
-	 <p>Go with your gut. <br/>
-	  Experiment with new ingredients. <br/>
-	  More is always better! </p>
-
-      <div id="post">
-	<h1 id=rslngiskiten> Just throw it into the oven </h1>
-	<div id="collapsableblock">
-	<script>AddCollapsableBlockHeader("lslngiskiten", "Shopping list");</script>
-          <div id="lslngiskiten" style="display: none">
-	  <p><b>Ingredients:</b><br/>
-	  Chicken breasts <br/>
-	  Chorizo sausage <br/>
-	  Zucchini <br/>
-	  Pepper <br/>
-	  Onions <br/>
-	  Garlic <br/>
-	  Chickpeas <br/>
-	  Mixed olives <br/>
-	  <br/>
-	  <b>Carbs:</b><br/>
-	  Couscous or rice<br/></p>
-
-	  <p><b>Spices:</b><br/>
-	  Thyme<br/>
-	  Black pepper<br/>
-	  Salt<br/>
-	  Oil<br/>
-	  Sambal olek<br/>
-	  </p>
-	  </div>
-        </div>
-        <div id="collapsableblock">
-	<script>AddCollapsableBlockHeader("islngiskiten", "Instructions");</script>
-          <div id="islngiskiten" style="display: none">
-	  <p>Set oven to <b>175</b> degrees celsius.<br/></p>
-	  <p>Chop all choppable ingredients.<br/>
-	  Pour all ingredients into a deep baking dish and just throw it into the oven. </p>
-	  <p>It takes about <b>20</b> minutes to cook. Overcooked chicken will be dry (but do you really give a fuck?), undercooked chicken will kill you. <br/></p>
-	  <p>Serve with what ever carbs.</p>
-	  </div>
-        </div>
-	<i><a href="#top" class="to-top">Top of page</a></i>
-     </div> <!-- end of post -->
-
-
+	<h1>The stereotypical programmer</h1>
+	<p>
+	The stereotype of programmers programming all the time even when getting home from work, does not stand true. I work as a software engineer, making embedded systems in C. <br/>
+	When programming in my free time I program games, graphics and small computer vision applications. The majority of the code will be in C++, with some C# and python scripting.
+	</p>
+	<h2>Code that is fast and slow</h2>
+	<p>
+	The initial idea for this website was to upload small independent systems that fit in loops in a rendering engine. What I realized early during college was that people in general, are <b>NOT</b> interested in following and processing indepth tutorials. So fuck that. I am a junior developer and this code is probably, at best, pretty bad. I reckon I will cringe reading code here in just a couple of years. <br/>
+	With that said, some generic scripts that I find myself using alot can be found here. Some solutions to problems that I find cool can also be found here. The code will be handcoded by me and unlicensed.</p>
 
 	<div id="post">
-	<h1 id=rbnormedkykling> Beans with beans and chicken </h1>
+	<h1 id=vim>Vim</h1>
 	<div id="collapsableblock">
-	<script>AddCollapsableBlockHeader("lbnormedkykling", "Shopping list");</script>
-          <div id="lbnormedkykling" style="display: none">
-	  <p><b>Ingredients:</b><br/>
-	  Chicken breasts <br/>
-	  Onions<br/>
-	  Chickpeas<br/>
-	  Mixed beans<br/>
-	  Coconut milk <br/>
-	  Chopped Tomatos <br/>
-	  Brocolli heads (frozen goes well) <br/>
-	  <br/>
-
-	  <p><b>Spices:</b><br/>
-	  Thyme<br/>
-	  Black pepper<br/>
-	  Salt<br/>
-	  Sambal olek<br/>
-	  Garlic <br/>
-	  </p>
-	  </div>
+	<script>AddCollapsableBlockHeader("vimrc", ".vimrc", "2020-08-09");</script>
+	<p></p>
         </div>
         <div id="collapsableblock">
-	<script>AddCollapsableBlockHeader("ibnormedkykling", "Instructions");</script>
-          <div id="ibnormedkykling" style="display: none">
-	  <p>Chop and fry onions and chicken breasts in a large pot.<br/>
-	  Add all but the brocolli. As soon as the sauce is boiling add the brocolli.</p>
-	  </div>
+	<script>AddCollapsableBlockHeader("viminstall", "Installing vim", "2020-08-09");</script>
+        <p>On linux you install vim with apt get. On windows you can use gvim which can be downloaded from: <a></a></p>
         </div>
 	<i><a href="#top" class="to-top">Top of page</a></i>
 	</div> <!-- end of post -->
+
+	<div id="post">
+	<h1 id=mdadm>Linux MDADM RAID</h1>
+	<div id="collapsableblock">
+	<script>AddCollapsableBlockHeader("create", "Creating RAID", "2020-12-26");</script>
+        <p>Partition all harddrives with linux ee
+	<p>mdadm --create /dev/md127 --num-raid-devices 4 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev /sdd1</p>
+        </div>
+        <div id="collapsableblock">
+	<script>AddCollapsableBlockHeader("ure", "Unrecoverable read error", "2020-12-26");</script>
+        <p>Electronics are complicated. Electrical current is not read as 1 or 0, it is parsed into 1 or 0 from some threshold on the measured current. From my understanding of harddisks, the stored values in a magnetic segment on the disk could be interpreted as a value between zero and one. Is the value bellow or higher than 0.5 is what determens if the bit was 1 or 0. A read error occurs when the value 0.49 is misread as 0.51, which parses the bit to 1 when it should have been 0.
+        Some batches are more reliable than others. Some mechanical harddrives never fails, and some do after just a year.</p>
+        <p>The read error becomes "unrecoverable" when reconstructing the redundancy of the raid array onto a spare disk. The recrated data is simply corrupted when one of the bits are misread.</p>
+        </div>
+	<i><a href="#top" class="to-top">Top of page</a></i>
+	</div> <!-- end of post -->
+
+	<div id="post">
+	<h1 id=charactercontrollers>Character controllers</h1>
+	<div id="collapsableblock">
+	<script>AddCollapsableBlockHeader("camerarelative3dcontroller", "Camera relative 3D controller", "2020-12-26");</script>
+        <p>
+        int test = 0;<br>
+        test++;<br>
+        return test;
+        </p>
+        </div>
+	<i><a href="#top" class="to-top">Top of page</a></i>
+	</div> <!-- end of post -->
+
+
      </div> <!-- end post wrapper -->
     </div> <!-- end wrapper -->
   <footer>

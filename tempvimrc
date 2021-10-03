@@ -1,0 +1,224 @@
+
+" Show it what mode you are in.
+:set showmode
+
+" Display line numbers in front of every line.
+:set number
+
+" Highlighting whitespaces that probably shouldn't be there.
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" Show spaces before a tab:
+:match ExtraWhitespace / \+\ze\t/
+
+" Show tabs that are not at the start of a line:
+:match ExtraWhitespace /[^\t]\zs\t\+/
+
+" Show tab and eol
+"set list
+"set listchars=tab:»\ 
+:hi NormalWhitespace ctermfg=darkgray
+:match NormalWhitespace /\s/
+
+" Show trailing whitespace, except when typing at the end of a line.
+:au InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
+:au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+" Always display the current cursor position in the lower right corner of the
+" Vim window.
+:set ruler
+
+" Show matching parenthesis while typing.
+:set showmatch
+
+" Searches are case insensitive.
+:set ignorecase
+
+" If the search pattern has uppercase letters, the search is case sensitive.
+:set smartcase
+
+" Highlight matches with the last used search pattern.
+:set hlsearch
+
+" Use the + buffer (the system clipboard) by default.
+":set clipboard=unnamedplus
+
+" Disable highlight when we starts moving around again.
+":map j <Down>:nohlsearch<CR>
+":map k <Up>:nohlsearch<CR>
+":map h <Left>:nohlsearch<CR>
+":map l <Right>:nohlsearch<CR>
+" This was no good, instead bind to Alt-q.
+:map <A-q> :nohlsearch<CR>
+
+
+" Display the match for a search pattern when halfway typing it.
+:set incsearch
+
+" Switches on syntax highlighting, but only if colors are available..
+if &t_Co > 1
+  syntax on
+endif
+autocmd BufNewFile,BufRead *.c,*.h set syntax=glib
+
+" Use relative numbers in normal mode, but not in insertmode
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+
+au BufRead,BufNewFile *.logcat set filetype=logcat
+
+" Don't move cursor closer than 3 lines from top/bottom.
+":set scrolloff=3
+
+" Default tabbing.
+:set shiftwidth=8
+:set softtabstop=2
+
+" Use spaces instead of tabs.
+:set expandtab
+":set noexpandtab
+
+" Set width for text.
+":set textwidth=70"
+
+" Keep 100 commands and 100 search patterns in the history.
+:set history=100
+
+" Display an incomplete command in the lower right corner of the Vim window,
+" left of the ruler
+:set showcmd
+
+" Mouse support
+:set mouse=a
+
+" Persistent undo
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
+" this switches on three very clever mechanisms:
+" 1. Filetype detection.
+" 2. Using filetype plugin files.
+" 3. Using indent files.
+:filetype plugin indent on
+
+:set cino=(0
+
+" We want to be able to use Up/Down in edit mode too.
+:map <Up> gk
+:map <Down> gj
+
+" Tweak :make to do make file.o instead of make file.c
+:set makeprg=make\ %:r.o
+
+" Set language for spell checking.
+:set spelllang=en_us,sv
+
+" Switch on spell checking.
+":setlocal spell spelllang=en_us
+
+" Turn off beeping the bell.
+":set vb t_vb=
+:set vb
+
+" Map complete word forward to tab, and backward to shift-tab.
+function! InsertTabWrapper(direction)
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    elseif "backward" == a:direction
+        return "\<c-p>"
+    else
+        return "\<c-n>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
+inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+
+" Allow changing buffers with Ctrl-MoveKey.
+":set winminheight=0
+":set winheight=999
+"map <c-j> <c-w>j<c-w>_
+"map <c-k> <c-w>k<c-w>_
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+"nmap <c-h> <c-w>h<c-w>
+"nmap <c-l> <c-w>l<c-w>
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
+" Resize windows quickly.
+"map - <c-w>-
+"map + <c-w>+
+"map <m-<> <c-w><
+"map <m->> <c-w>>
+
+" Allow all window commands in insert mode.
+imap <c-w> <c-o><c-w>
+
+" Add highlight for current line.
+" autocmd BufLeave * setlocal nocursorline
+" autocmd BufEnter * setlocal cursorline
+:set nocursorline
+"hi CursorLine term=none cterm=none ctermbg=1
+"autocmd InsertLeave * hi CursorLine term=none cterm=none ctermbg=5
+"autocmd InsertEnter * hi CursorLine term=none cterm=none ctermbg=4
+
+" Tell vim that we are using terminal with 256 colors.
+:set t_Co=256
+
+" Add support for nice xterm16 color theme.
+"let xterm16_brightness = 'default'    " Change if needed
+"let xterm16_colormap = 'allblue'      " Change if needed
+" Override to black background (instead of grey as default).
+"let g:inkpot_black_background = 1
+" colo xterm16
+"colorscheme inkpot
+
+" This specifies where in Insert mode the <BS> is allowed to delete the
+" character in front of the cursor.
+:set backspace=indent,eol,start
+
+" Enable backspace in normalmode
+nnoremap <BS> X
+
+" Move cursor up/down one line when moving beyond line.
+:set whichwrap=b,s,<,>,[,],h,l
+
+" Increase space for messages (in the bottom of vim).
+:set cmdheight=3
+
+" Easy folding using alt-a.
+"syn region myFold start="{" end="}" transparent fold
+"syn sync fromstart
+:set foldmethod=syntax
+autocmd BufRead * :silent! %foldopen!
+
+map <A-a> :%foldopen!<CR>
+map <A-z> :%foldclose!<CR>
+
+" Map Alt+h/Alt+l to Home/End.
+map <A-h> 0
+map <A-l> $
+
+" Always keep pwd to dir of current file.
+"autocmd BufEnter * :lcd %:p:h
+
+" Expand current file directory (in the command line).
+cmap %/ <C-R>=expand("%:p:h")."/"<CR>
+
+" Search for the file named 'tags', starting with the
+" current directory and then going to the parent directory and then
+" recursively to the directory one level above, till it either
+" locates the 'tags' file or reaches the root '/' directory.
+:set tags=tags;/
+
+" Set path used by gf and :find and similar.
+:set path=.,/usr/include,

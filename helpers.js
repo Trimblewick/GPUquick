@@ -20,7 +20,6 @@ function AddMenuButtons()
     var menuButton = document.createElement('div');
     var hyperLink = document.createElement('a');
     menuButton.setAttribute('class', 'button-menu');
-    menuButton.onclick = function () { currentButton=listOfButtons[i][0]; };
 
     if (listOfButtons[i][1] != currentPage)
     {

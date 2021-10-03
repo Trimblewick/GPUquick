@@ -58,3 +58,7 @@ function Collapse(element, containerid)
     }
   }
 }
+
+function CollapseAll() {
+
+}
